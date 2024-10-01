@@ -1,0 +1,29 @@
+You will be given an automated diagnostic report for big data anomalies.
+
+Your task is to rate the report based on its coherence.
+
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+Coherence (1-5) - This metric assesses both the contextual and logical consistency of the automated diagnostic report. A coherent report should exhibit the following characteristics:
+- **Contextual Consistency**: A coherent report should be easy to understand and follow. The language used should be clear and concise, with technical terms and jargon appropriately explained. The report should also provide a clear path of action based on the analysis of the anomaly.
+- **Logical Progression**: The report should present a clear and logical progression from the introduction of the anomaly, through its analysis, to the suggested resolution. The information should flow smoothly, with each section logically leading to the next.
+
+Evaluation Steps:
+
+1. Read the automated diagnostic report carefully.
+2. Assess the logical flow of information from the introduction of the anomaly, through its analysis, to the resolution suggestions.
+3. Evaluate how well the sections of the report connect and support each other.
+4. Assign a coherence score from 1 to 5 based on the criteria.
+
+Example:
+
+Automated Diagnostic Report:
+
+${report}
+
+
+Evaluation Form (scores ONLY):
+
+- Coherence:

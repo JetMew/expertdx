@@ -1,0 +1,28 @@
+You will be given an automated diagnostic report for big data anomalies.
+
+Your task is to rate the report based on its consistency.
+
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+Consistency (1-5)  - This metric measures the degree to which the information provided in the automated diagnostic report corresponds with known facts and real-world knowledge. A consistent report should exhibit the following characteristics:
+- **Fact-based**: The report should be grounded in facts. Any claim, inference, or conclusion drawn in the report should be supported by solid, verifiable facts. Unsupported assertions or speculations should be minimal or non-existent.
+- **Problem-Solution Alignment**: The report should demonstrate a clear alignment between the identified problems and proposed solutions. The solutions proposed should logically address the problems identified and should not contradict any part of the analysis.
+Evaluation Steps:
+
+1. Read the automated diagnostic report carefully.
+2. Check for consistency in the use of data, terminology, and the alignment between identified problems and proposed solutions.
+3. Note any discrepancies or contradictions within the report.
+4. Assign a consistency score from 1 to 5 based on the criteria.
+
+Example:
+
+Automated Diagnostic Report:
+
+${report}
+
+
+Evaluation Form (scores ONLY):
+
+- Consistency:

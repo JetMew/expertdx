@@ -1,0 +1,7 @@
+.idea
+__pycache__
+config/local*.yaml
+results/
+logs/
+data/
+

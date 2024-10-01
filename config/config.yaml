@@ -1,0 +1,99 @@
+default-config: &default-api-config
+  version:  2024-02-15-preview
+  endpoint:
+  apikey:
+
+default-param: &default-llm-param
+  max_tokens: 4096
+  temperature: 0.7
+  top_p: 0.8
+
+data_dir: &data_dir results/data
+
+environment:
+  type: diagnosis
+  offline: true
+  data_dir: *data_dir
+  agents:
+    - type: helper_agent
+      name: helper_agent
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: rule_analyzer
+          llm:
+            type: azure_openai_chat
+            model: gpt4-turbo
+            <<: *default-llm-param
+            <<: *default-api-config
+      verbose: true
+
+    - type: module_agent
+      name: spark_agent
+      role_description: "As a Spark expert, you are assigned to diagnose an unexpected incident. In this task, you are required to utilize various Spark-related tools and techniques to identify and resolve the issue."
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: spark_driver_log_analyzer
+        - type: spark_executor_log_analyzer
+        - type: spark_history_server_analyzer
+      verbose: true
+
+
+    - type: module_agent
+      name: yarn_agent
+      role_description: "As an YARN expert, you are assigned to diagnose an unexpected incident. In this task, you are required to utilize various YARN-related tools and techniques to identify and resolve the issue."
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: yarn_resource_dashboard_analyzer
+      verbose: true
+
+    - type: module_agent
+      name: hdfs_agent
+      role_description: "As an HDFS expert, you are assigned to diagnose an unexpected incident. In this task, you are required to utilize various HDFS-related tools and techniques to identify and resolve the issue."
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: hdfs_nn_log_analyzer
+        - type: hdfs_dn_log_analyzer
+      verbose: true
+
+
+    - type: module_agent
+      name: supersql_agent
+      role_description: "As a SQL expert, you are assigned to diagnose an unexpected incident. In this task, you are required to utilize various SQL-related tools and techniques to identify and resolve the issue."
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: sql_copilot
+      verbose: true
+
+    - type: module_agent
+      name: idex_agent
+      role_description: "As an expert in pyspark and scala, you are assigned to diagnose an unexpected incident. In this task, you are required to check code snippets to identify and resolve the issue."
+      llm:
+        type: azure_openai_chat
+        model: gpt4-turbo
+        <<: *default-llm-param
+        <<: *default-api-config
+      tools:
+        - type: program_analyzer
+      verbose: true
+
+    # more in-house product agents

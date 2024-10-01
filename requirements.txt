@@ -1,0 +1,6 @@
+yaml
+pydantic
+requests
+networkx
+matplotlib
+openai==1.5.0

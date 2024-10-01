@@ -1,0 +1,30 @@
+You will be given an automated diagnostic report for big data anomalies.
+
+Your task is to rate the report based on its relevance.
+
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+Relevance (1-5) - This metric evaluates the pertinence of the system’s output to the problem at hand. A relevant report should exhibit the following characteristics:
+- **Focus on Key Issues**: The report should concentrate on the key issues pertaining to the incident. It should thoroughly analyze the root causes.
+- **Applicable Solutions**: The report should offer solutions or responses that are directly applicable to the problems identified. These solutions should be practical, actionable, and tailored to address the specific anomalies identified.
+- **Absence of Irrelevant or Redundant Details**: The report should be concise and to the point. It should avoid including irrelevant information or redundant details that do not contribute to understanding or resolving the incident.
+
+Evaluation Steps:
+
+1. Read the automated diagnostic report carefully.
+2. Assess the focus of the report on the key issues, root causes, and proposed solutions for the big data anomalies.
+3. Determine how much of the report is dedicated to essential information versus irrelevant or redundant details.
+4. Assign a relevance score from 1 to 5 based on the criteria.
+
+Example:
+
+Automated Diagnostic Report:
+
+${report}
+
+
+Evaluation Form (scores ONLY):
+
+- Relevance:
